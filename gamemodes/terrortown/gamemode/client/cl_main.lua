@@ -139,15 +139,15 @@ local TryT = LANG.TryTranslation
 
 ---
 -- @realm client
-local cvEnableBobbing = CreateConVar("ttt2_enable_bobbing", "1", FCVAR_ARCHIVE)
+--local cvEnableBobbing = CreateConVar("ttt2_enable_bobbing", "1", FCVAR_ARCHIVE)
 
 ---
 -- @realm client
-local cvEnableBobbingStrafe = CreateConVar("ttt2_enable_bobbing_strafe", "1", FCVAR_ARCHIVE)
+--local cvEnableBobbingStrafe = CreateConVar("ttt2_enable_bobbing_strafe", "1", FCVAR_ARCHIVE)
 
 -- @realm client
-local cvEnableDynamicFOV =
-    CreateConVar("ttt2_enable_dynamic_fov", "1", { FCVAR_NOTIFY, FCVAR_ARCHIVE })
+--local cvEnableDynamicFOV =
+    --CreateConVar("ttt2_enable_dynamic_fov", "1", { FCVAR_NOTIFY, FCVAR_ARCHIVE })
 
 cvars.AddChangeCallback("ttt2_enable_dynamic_fov", function(_, _, valueNew)
     LocalPlayer():SetSettingOnServer("enable_dynamic_fov", tobool(valueNew))
@@ -736,9 +736,9 @@ function GM:DynamicCamera(viewTable, ply)
         dynFOV = fovLast - (fovLast - fovNext) * progressTransition
     end
 
-    if cvEnableDynamicFOV:GetBool() then
-        viewTable.fov = dynFOV
-    end
+    --if cvEnableDynamicFOV:GetBool() then
+    --    viewTable.fov = dynFOV
+    --end
 
     if (not ply:IsOnGround() and ply:WaterLevel() == 0) or ply:InVehicle() then
         airtime = math.Clamp(airtime + 1, 0, 300)
@@ -794,14 +794,14 @@ function GM:DynamicCamera(viewTable, ply)
         lastStrafeValue = strafeValue
     end
 
-    if cvEnableBobbing:GetBool() then
-        viewTable.angles.r = viewTable.angles.r + math.sin(position * 0.5) * velocity * 0.001
-        viewTable.angles.p = viewTable.angles.p + math.sin(position * 0.25) * velocity * 0.001
-    end
+    --if cvEnableBobbing:GetBool() then
+    --    viewTable.angles.r = viewTable.angles.r + math.sin(position * 0.5) * velocity * 0.001
+    --    viewTable.angles.p = viewTable.angles.p + math.sin(position * 0.25) * velocity * 0.001
+    --end
 
-    if cvEnableBobbingStrafe:GetBool() then
-        viewTable.angles.r = viewTable.angles.r + lastStrafeValue
-    end
+    --if cvEnableBobbingStrafe:GetBool() then
+    --    viewTable.angles.r = viewTable.angles.r + lastStrafeValue
+    --end
 end
 
 ---
