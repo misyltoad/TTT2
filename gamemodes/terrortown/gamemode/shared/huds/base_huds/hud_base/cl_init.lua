@@ -11,7 +11,7 @@ HUD.disabledTypes = {}
 
 -- The preview image that is shown in the HUD-Switcher.
 -- Has to be a GMOD Material!
-HUD.previewImage = Material("vgui/ttt/score_logo_2")
+HUD.previewImage = Material("vgui/ttt/score_logo")
 
 HUD.savingKeys = {}
 

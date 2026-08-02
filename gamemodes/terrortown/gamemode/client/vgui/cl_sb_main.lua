@@ -103,7 +103,7 @@ function ScoreGroup(ply)
 end
 
 TTTScoreboard = TTTScoreboard or {}
-TTTScoreboard.Logo = surface.GetTextureID("vgui/ttt/score_logo_2")
+TTTScoreboard.Logo = surface.GetTextureID("vgui/ttt/score_logo")
 
 surface.CreateFont("cool_small", {
     font = "coolvetica",
